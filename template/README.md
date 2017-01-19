@@ -1,14 +1,21 @@
-## vue+webpack 多页面 
+# vue+webpack 多页面 template
 
-## 使用方法
-``` bash
-# 安装
-npm install
+##  Use environment
+``` bash or iterm2
+
+# 安装install
+ 
+ `npm install`
 
 # 调试环境 
-npm run dev
+
+ `npm run dev`
 
 # 生产环境
-npm run build
+ `npm run build`
 
 ```
+
+## version
+
+1.1.0

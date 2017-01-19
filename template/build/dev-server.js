@@ -12,10 +12,10 @@ var webpackConfig = process.env.NODE_ENV === 'testing'
 var port = process.env.PORT || config.dev.port
 // Define HTTP proxies to your custom API backend
 // https://github.com/chimurai/http-proxy-middleware 
-var proxyTable = config.dev.proxyTable
+var proxyTable = config.dev.proxyTable;
 
-var app = express()
-var compiler = webpack(webpackConfig)
+var app = express();
+var compiler = webpack(webpackConfig);
 //webpack-dev-middleware 将webpack打包中间件，给express使用
 var devMiddleware = require('webpack-dev-middleware')(compiler, {
   publicPath: webpackConfig.output.publicPath,
@@ -23,7 +23,7 @@ var devMiddleware = require('webpack-dev-middleware')(compiler, {
     colors: true,
     chunks: false
   }
-})
+});
 
 var hotMiddleware = require('webpack-hot-middleware')(compiler)
 // force page reload when html-webpack-plugin template changes

@@ -52,13 +52,13 @@ module.exports = {
       {
         test   : /\.css$/,
         loader : 'style-loader!css-loader'
-      }, 
+      },
       {
-        test: /\.less$/, 
+        test: /\.less$/,
         loader: 'style!css!less'
       },
-      { 
-        test: /\.scss$/, 
+      {
+        test: /\.scss$/,
         loader: 'style!css!sass?sourceMap'
       },
       {
@@ -66,23 +66,23 @@ module.exports = {
         loader: 'vue-html'
       },
       //字体
-    {
-      test: /\.((ttf|eot|woff|svg)(\?t=[0-9]\.[0-9]\.[0-9]))|(ttf|eot|woff|svg)\??.*$/,
-      loader: 'url?limit=10000&name=fonts/[name].[ext]'
-    },
-    {
-        //test: /\.(png|jpe?g|gif|svg|woff2?|eot|ttf|otf)(\?.*)?$/,
-        test: /\.(png|jpe?g|gif)(\?.*)?$/,
-        loader: 'url',
-        query: {
-          limit: 10000,
-          name: path.join(config.build.assetsSubDirectory, '[name].[hash:7].[ext]')
-        }
-    },
-    {
-  		test: /vux.src.*?js$/,
-  		loader: 'babel'
-	}
+      {
+        test: /\.((ttf|eot|woff|svg)(\?t=[0-9]\.[0-9]\.[0-9]))|(ttf|eot|woff|svg)\??.*$/,
+        loader: 'url?limit=10000&name=fonts/[name].[ext]'
+      },
+      {
+          //test: /\.(png|jpe?g|gif|svg|woff2?|eot|ttf|otf)(\?.*)?$/,
+          test: /\.(png|jpe?g|gif)(\?.*)?$/,
+          loader: 'url',
+          query: {
+            limit: 10000,
+            name: path.join(config.build.assetsSubDirectory, '[name].[hash:7].[ext]')
+          }
+      },
+      {
+        test: /vux.src.*?js$/,
+        loader: 'babel'
+    }
     ]
   },
   vue: {
@@ -98,7 +98,7 @@ module.exports = {
     // 配置提取出的样式文件
     new ExtractTextPlugin('css/[name].[hash:7].css')
   ]
-  
+
 }
 
 function getEntry(globPath) {
@@ -111,6 +111,6 @@ function getEntry(globPath) {
     pathname = tmp.splice(0, 1) + '/' + basename; // 正确输出js和html的路径
     entries[pathname] = entry;
   });
-  
+
   return entries;
 }

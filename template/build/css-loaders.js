@@ -7,7 +7,7 @@ module.exports = function (options) {
   // generate loader string to be used with extract text plugin
   function generateLoaders (loaders) {
     var sourceLoader = loaders.map(function (loader) {
-      var extraParamChar
+      var extraParamChar;
       if (/\?/.test(loader)) {
         loader = loader.replace(/\?/, '-loader?')
         extraParamChar = '&'
@@ -16,7 +16,7 @@ module.exports = function (options) {
         extraParamChar = '?'
       }
       return loader + (options.sourceMap ? extraParamChar + 'sourceMap' : '')
-    }).join('!')
+    }).join('!');
 
     if (options.extract) {
       return ExtractTextPlugin.extract('vue-style-loader', sourceLoader)

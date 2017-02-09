@@ -27,19 +27,20 @@
 				<a href="../ver_record/ver_record?fid=id">全部</a>
 			</span>
 		</div>
-		<div class="ver-content">           
+		<div class="ver-content">
             <div class="ver">
             	<div class="ver-left">{{ ver }}</div>
             	<div class="ver-right">{{ ttime }}</div>
             </div>
-            <div class="limit-two">{{ ver_content }}</div>           
+            <div class="limit-two">{{ ver_content }}</div>
         </div>
 	</div>
 </div>
-
+<div v-on:click="toast">点击弹出Toast</div>
 </template>
 <script>
 	import Lib from 'assets/Lib.js'
+    import { Toast,Indicator } from 'mint-ui';
 	export default{
 		data(){
 			return{
@@ -50,7 +51,7 @@
 			}
 		},
 		components:{
-			
+
 		},
 		ready(){
 			var that = this;
@@ -76,8 +77,21 @@
 					//fail
 
 				});
-			}
-		}
+			},
+          toast(){
+
+           // Toast({
+           //   message: '提示',
+           //   position: 'middle',
+           //   duration: 1000
+           // });
+            // Indicator.open('加载中...');
+            // setTimeout(()=>{
+            //   Indicator.close();
+            // },2000);
+
+          }
+	}
 
 	}
 </script>
@@ -192,7 +206,7 @@
     float: right;
     font-size: 12px;
     color: #888;
-    
+
 }
 .hp-version .ver-content .limit-two{
     word-wrap:break-word;
@@ -226,5 +240,15 @@
   display: inline-block;
   vertical-align: middle;
 }
-
+@media screen and (max-width: 680px){
+    p img, img {
+    width: 100%;
+} 
+}
+ p img, img {
+    display: block;
+    margin: 0 auto 20px;
+    max-width: 600px;
+    clear: both;
+}
 </style>

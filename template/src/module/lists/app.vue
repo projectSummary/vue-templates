@@ -18,7 +18,7 @@
 </template>
 <script>
 	import Lib from 'assets/Lib.js'
-	import list from 'components/list' 
+	
 	export default{
 		data(){
 			return{

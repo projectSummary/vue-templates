@@ -41,7 +41,7 @@
 <script>
 	import Lib from 'assets/Lib.js'
     // import { Toast,Indicator } from 'mint-ui';
-    import Toast from 'components/toast'
+    import {Toast,Indicator} from 'components'
 	export default{
 		data(){
 			return{
@@ -81,15 +81,15 @@
 			},
           toast(){
 
-           Toast({
-             message: '提示',
-             position: 'middle',
-             duration: 1000
-           });
-            // Indicator.open('加载中...');
-            // setTimeout(()=>{
-            //   Indicator.close();
-            // },2000);
+           // Toast({
+           //   message: '提示',
+           //   position: 'middle',
+           //   duration: 1000
+           // });
+            Indicator.open('加载中...');
+            setTimeout(()=>{
+              Indicator.close();
+            },2000);
 
           }
 	}

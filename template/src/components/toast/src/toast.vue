@@ -6,10 +6,9 @@
     </div>
   </transition>
 </template>
-<style>
-  @component-namespace mint {
-    @component toast {
-      position: fixed;
+<style scoped>
+	.mint-toast{
+	  position: fixed;
       max-width: 80%;
       border-radius: 5px;
       background: rgba(0, 0, 0, 0.7);
@@ -18,39 +17,60 @@
       text-align: center;
       z-index: 1000;
       transition: opacity .3s linear;
-  
-      @descendent icon {
-        display: block;
+	}
+	.mint-toast-icon{
+		display: block;
         text-align: center;
         font-size: 56px;
+	}
+	.mint-toast-text{
+		font-size: 14px;
+        display: block;
+        text-align: center;
+	}
+	.mint-toast.is-placetop{
+		top: 50px;
+        left: 50%;
+        transform: translate(-50%, 0);
+	}
+	.mint-toast.is-placemiddle{
+		left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+	}
+	.mint-toast.is-placebottom{
+		bottom: 50px;
+        left: 50%;
+        transform: translate(-50%, 0);
+	}
+	.mint-toast-pop-enter, .mint-toast-pop-leave-active{
+		opacity: 0;
+	}
+  @component-namespace mint {
+    @component toast {
+      
+  
+      @descendent icon {
+        
       }
       
       @descendent text {
-        font-size: 14px;
-        display: block;
-        text-align: center;
+        
       }
       
       @when placetop {
-        top: 50px;
-        left: 50%;
-        transform: translate(-50%, 0);
+        
       }
       
       @when placemiddle {
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
+        
       }
       
       @when placebottom {
-        bottom: 50px;
-        left: 50%;
-        transform: translate(-50%, 0);
+        
       }
       
       @descendent pop-enter, pop-leave-active {
-        opacity: 0;
       }
     }
   }

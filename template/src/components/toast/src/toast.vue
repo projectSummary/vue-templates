@@ -46,34 +46,6 @@
 	.mint-toast-pop-enter, .mint-toast-pop-leave-active{
 		opacity: 0;
 	}
-  @component-namespace mint {
-    @component toast {
-      
-  
-      @descendent icon {
-        
-      }
-      
-      @descendent text {
-        
-      }
-      
-      @when placetop {
-        
-      }
-      
-      @when placemiddle {
-        
-      }
-      
-      @when placebottom {
-        
-      }
-      
-      @descendent pop-enter, pop-leave-active {
-      }
-    }
-  }
 </style>
 
 <script>

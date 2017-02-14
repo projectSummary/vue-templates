@@ -40,7 +40,6 @@
 </template>
 <script>
 	import Lib from 'assets/Lib.js'
-    // import { Toast,Indicator } from 'mint-ui';
     import {Toast,Indicator} from 'components'
 	export default{
 		data(){

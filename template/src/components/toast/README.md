@@ -6,10 +6,12 @@
 import { Toast } from 'components';
 ```
 ###例子
+
 基本用法
 ```javascript
 Toast('提示信息');
 ```
+
 在调用 Toast 时传入一个对象即可配置更多选项
 ```javascript
 Toast({
@@ -18,3 +20,23 @@ Toast({
   duration: 5000
 });
 ```
+若需在文字上方显示一个 icon 图标，可以将图标的类名作为 iconClass 的值传给 Toast（图标需自行准备）
+```javascript
+Toast({
+  message: '操作成功',
+  iconClass: 'icon icon-success'
+});
+```
+
+###API
+* message,  文本内容,String
+* position, Toast 的位置 ,'top','bottom','middle', String
+* duration, 持续时间（毫秒）;Number
+* className, Toast 的类名。可以为其添加样式; String
+* iconClass, icon 图标的类名;  String
+
+
+
+
+
+

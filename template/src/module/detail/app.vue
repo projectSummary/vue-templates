@@ -40,7 +40,7 @@
 </template>
 <script>
 	import Lib from 'assets/Lib.js'
-    import {Toast,Indicator} from 'components'
+    import {Toast,Indicator,MessageBox} from 'components'
 	export default{
 		data(){
 			return{
@@ -85,11 +85,15 @@
            //   position: 'middle',
            //   duration: 1000
            // });
-            Indicator.open('加载中...');
-            setTimeout(()=>{
-              Indicator.close();
-            },2000);
 
+            // Indicator.open({
+            //     text: '加载~~~',
+            //     spinnerType: 'snake'
+            // });
+            // setTimeout(()=>{
+            //   Indicator.close();
+            // },1000);
+            MessageBox('提示', '操作成功');
           }
 	}
 

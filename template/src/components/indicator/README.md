@@ -2,7 +2,9 @@
 加载提示框，支持自定义文本和加载图标
 
 ### 引入
+```javascript
 import { Indicator } from 'components';
+```
 
 ### 例子
 

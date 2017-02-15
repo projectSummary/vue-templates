@@ -15,7 +15,9 @@
   transition: opacity .2s linear;
 }
 .mint-indicator-wrapper{
-      position: fixed 50% * * 50%;
+      top: 50%;
+      left: 50%;
+      position: fixed;
       transform: translate(-50%, -50%);
       border-radius: 5px;
       background: rgba(0, 0, 0, 0.7);
@@ -35,8 +37,10 @@
   text-align: center;
 }
 .mint-indicator-mask{
-  position: fixed 0 * * 0;
-  size: 100%;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
   opacity: 0;
   background: transparent;
 }

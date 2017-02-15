@@ -32,7 +32,7 @@ ToastConstructor.prototype.close = function() {
   this.closed = true;
   returnAnInstance(this);
 };
-
+//options 配置项
 let Toast = (options = {}) => {
   let duration = options.duration || 3000;
 

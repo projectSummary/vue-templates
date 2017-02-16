@@ -28,7 +28,10 @@ var defaults = {
 
 import Vue from 'vue';
 import msgboxVue from './messageBox.vue';
-
+/**
+  merge 第一个参数是目标对象，后面其他的都是要被合并的对象
+  这个函数写的很好
+*/
 var merge = function(target) {
   for (var i = 1, j = arguments.length; i < j; i++) {
     var source = arguments[i];
@@ -118,7 +121,9 @@ var showNextMsg = function() {
     }
   }
 };
-
+/*
+  主体函数
+*/
 var MessageBox = function(options, callback) {
   if (typeof options === 'string') {
     options = {

@@ -37,26 +37,41 @@
 	</div>
 </div>
 <div v-on:click="toast">点击弹出Toast</div>
+<actionsheet :actions="actions" :visible.sync="sheetVisible"></actionsheet>
 </template>
 <script>
 	import Lib from 'assets/Lib.js'
-    import {Toast,Indicator,MessageBox} from 'components'
+    import {Toast,Indicator,MessageBox,Actionsheet} from 'components';
 	export default{
 		data(){
 			return{
 				ver:'',
 				fid:43,
 				isLoading: true,
-				tobj:{}
+				tobj:{},
+                sheetVisible: true,
+                actions:[
+                    {
+                        name:'拍照',
+                        method:function(){
+                            alert('1');
+                        }
+                    },
+                    {
+                        name:'取消',
+                        method:function(){
+                            alert('eqw');
+                        }
+                    }
+                ]
+                
 			}
 		},
 		components:{
-
+            Actionsheet
 		},
 		ready(){
 			var that = this;
-			// console.log('router',that.$route);
-			// that.fid = that.$route.query.fid;
 			that.getData();
 		},
 		methods:{
@@ -100,7 +115,7 @@
 	}
 </script>
 <style scoped>
-	@import '../../assets/css.css';
+@import '../../assets/style/css.css';
 .detail-container{
 	background-color: #fff;
 }

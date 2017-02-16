@@ -1,4 +1,4 @@
-import 'assets/css.css';
+import 'assets/style/css.css';
 import C from 'assets/conf';
 import M from 'assets/common';
 var Rxports = {

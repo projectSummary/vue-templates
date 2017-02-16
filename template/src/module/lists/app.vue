@@ -29,7 +29,6 @@
 			}
 		},
 		components:{
-			list
 		},
 		ready(){
 			var that = this;
@@ -58,8 +57,8 @@
 
 	}
 </script>
-<style scoped lang="scss">
-@import '../../assets/css.css';
+<style scoped>
+@import '../../assets/style/css.css';
 .list-app{
 	background-color: #eee;
 }

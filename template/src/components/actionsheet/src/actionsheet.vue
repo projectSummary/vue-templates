@@ -22,21 +22,21 @@
       transition: transform .3s ease-out;
 }
 .mint-actionsheet-list{
-list-style: none;
-        padding: 0;
-        margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 .mint-actionsheet-listitem{
   border-bottom: solid 1px #e0e0e0;
 }
 .mint-actionsheet-listitem,.mint-actionsheet-button{
   display: block;
-        width: 100%;
-        height: 45px;
-        line-height: 45px;
-        font-size: 18px;
-        color: #333;
-        background-color: #fff;
+  width: 100%;
+  height: 45px;
+  line-height: 45px;
+  font-size: 18px;
+  color: #333;
+  background-color: #fff;
 }
 .mint-actionsheet-listitem:active{
   background-color: #f0f0f0;
@@ -44,10 +44,10 @@ list-style: none;
 .mint-actionsheet-button:active{
    background-color: #f0f0f0;
 }
-  .actionsheet-float-enter,
-  .actionsheet-float-leave-active {
-    transform: translate3d(-50%, 100%, 0);
-  }
+.actionsheet-float-enter,
+.actionsheet-float-leave-active {
+  transform: translate3d(-50%, 100%, 0);
+}
 </style>
 
 <script>

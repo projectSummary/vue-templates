@@ -42,6 +42,7 @@
 <script>
 	import Lib from 'assets/Lib.js'
     import {Toast,Indicator,MessageBox,Actionsheet} from 'components';
+    import axios from 'axios';
 	export default{
 		data(){
 			return{
@@ -77,19 +78,16 @@
 		methods:{
 			getData(){
 				var that = this;
-				// that.$http.get('https://api.smzdm.com/ev1/finder_detail/',{
-				// 	params:{
-				// 		fid: that.fid
-				// 	}
-				// }).then((response) => {
-				// 	//success
-				// 	var $body = JSON.parse(response.body);
-				// 	var $data = $body.data;
-				// 	console.log('data:',$body);
-				// 	// that.$set('tobj',$data);
-				// 	that.tobj = $data
-				// },(response) => {
-				// });
+				axios.get('http://api.smzdm.com/ev1/finder_detail/',{
+                    params: {
+                        fid: 11
+                    }
+				}).then((response) => {
+					var $data = response.data.data;
+					console.log('data:', $data);
+					// that.$set('tobj',$data);
+					that.tobj = $data
+				});
 			},
           toast(){
 

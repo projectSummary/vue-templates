@@ -35,9 +35,9 @@
             <div class="limit-two">{{ ver_content }}</div>
         </div>
 	</div>
+    <div v-on:click="toast">点击弹出Toast</div>
+    <actionsheet :actions="actions" :visible.sync="true"></actionsheet>
 </div>
-<div v-on:click="toast">点击弹出Toast</div>
-<actionsheet :actions="actions" :visible.sync="sheetVisible"></actionsheet>
 </template>
 <script>
 	import Lib from 'assets/Lib.js'
@@ -70,28 +70,28 @@
 		components:{
             Actionsheet
 		},
-		ready(){
+		mounted(){
 			var that = this;
 			that.getData();
 		},
 		methods:{
 			getData(){
 				var that = this;
-				that.$http.get('https://api.smzdm.com/ev1/finder_detail/',{
-					params:{
-						fid: that.fid
-					}
-				}).then((response) => {
-					//success
-					var $body = JSON.parse(response.body);
-					var $data = $body.data;
-					console.log('data:',$body);
-					// that.$set('tobj',$data);
-					that.tobj = $data
-				},(response) => {
-					//fail
+				// that.$http.get('https://api.smzdm.com/ev1/finder_detail/',{
+				// 	params:{
+				// 		fid: that.fid
+				// 	}
+				// }).then((response) => {
+				// 	//success
+				// 	var $body = JSON.parse(response.body);
+				// 	var $data = $body.data;
+				// 	console.log('data:',$body);
+				// 	// that.$set('tobj',$data);
+				// 	that.tobj = $data
+				// },(response) => {
+					
 
-				});
+				// });
 			},
           toast(){
 

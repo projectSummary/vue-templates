@@ -30,7 +30,7 @@
 		},
 		components:{
 		},
-		ready(){
+		mounted(){
 			var that = this;
 			that.getData();
 		},

@@ -89,8 +89,6 @@
 				// 	// that.$set('tobj',$data);
 				// 	that.tobj = $data
 				// },(response) => {
-					
-
 				// });
 			},
           toast(){

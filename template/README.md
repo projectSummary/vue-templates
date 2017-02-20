@@ -1,24 +1,16 @@
 # vue && webpack
-
-## environment
-
- `bash or iterm2`
-
 # 安装install
-
  `npm install`
-
 # 调试环境
-
  `npm run dev`
-
 # 生产环境
-
  `npm run build`
-
 ## version
-
-1.2.0
+1.2.1
+## 公告
+* detail.html 和 list.html 不再使用
+* 新建test.html
+*
 
 ## components
 组件暂时是有三种

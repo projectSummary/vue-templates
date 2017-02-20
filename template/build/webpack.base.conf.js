@@ -28,7 +28,8 @@ module.exports = {
       'assets': path.resolve(__dirname, '../src/assets'),
       'components': path.resolve(__dirname, '../src/components'),
       'vux-components': 'vux/src/components',
-      'vue': 'vue/dist/vue.js'
+      // 'vue': 'vue/dist/vue.js'
+      'vue$':'vue/dist/vue.common.js'
     }
   },
   resolveLoader: {

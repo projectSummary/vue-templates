@@ -2,10 +2,13 @@ import Toast from './toast/index.js';
 import Indicator from './indicator/index.js';
 import MessageBox from './message-box/index.js';
 import Actionsheet from './actionsheet/index.js';
+import Search from './search/index.js';
+
 
 module.exports = {
 	Toast,
 	Indicator,
 	MessageBox,
-	Actionsheet
+	Actionsheet,
+	Search
 };

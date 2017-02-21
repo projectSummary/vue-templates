@@ -179,5 +179,4 @@ color: #888;
         size: 5px;
         transform: translateY(-50%) rotate(45deg);
 }
- 
 </style>

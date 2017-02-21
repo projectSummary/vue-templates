@@ -14,7 +14,7 @@
 			}
 		},
 		components:{
-			Search
+			Search 
 		},
 		mounted(){
 

@@ -52,4 +52,15 @@ axios.get('http://api.smzdm.com/ev1/finder_detail/',{
                     var $data = response.data;
                 });
 ```
+### 1.0与2.0的一些区别
+与1.0的不同
+v-else-if：在2.0中新增了v-else-if，类似于js中的else if，不能单独使用，需跟在v-if之后；
+v-for：在使用v-for遍历对象的时候，当存在index时，1.0的参数顺序是(index, value)，2.0变成了(value, index)；
+v-for：1.0中，v-for块内有一个隐性的特殊变量$index可以获取当前数组的索引，在2.0中移除了，改为了以上这种显式的定义方式；
+key：key替代track-by
+
+
+
+
+
 

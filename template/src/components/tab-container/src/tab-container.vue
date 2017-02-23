@@ -23,7 +23,7 @@
     display: flex;
   }
   .cs-tab-container .swipe-transition{
-transition: transform 150ms ease-in-out;
+      transition: transform 150ms ease-in-out;
   }
 </style>
 <script>
@@ -45,13 +45,11 @@ import arrayFindIndex from 'array-find-index';
  * </mt-tab-container>
  */
 export default {
-  name: 'mt-tab-container',
-
+  name: 'cs-tab-container',
   props: {
     value: {},
     swipeable: Boolean
   },
-
   data() {
     return {
       start: { x: 0, y: 0 },

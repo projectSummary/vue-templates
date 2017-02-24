@@ -17,7 +17,7 @@
 }
 .cs-swipe-items-wrap > div.is-active{
   display: block;
-            transform: none;
+  transform: none;
 }
 .cs-swipe-indicators{
   position: absolute;
@@ -39,12 +39,12 @@
 </style>
 
 <template>
-  <div class="mint-swipe">
-    <div class="mint-swipe-items-wrap" ref="wrap">
+  <div class="cs-swipe">
+    <div class="cs-swipe-items-wrap" ref="wrap">
       <slot></slot>
     </div>
-    <div class="mint-swipe-indicators" v-show="showIndicators">
-      <div class="mint-swipe-indicator"
+    <div class="cs-swipe-indicators" v-show="showIndicators">
+      <div class="cs-swipe-indicator"
         v-for="(page, $index) in pages"
         :class="{ 'is-active': $index === index }"></div>
     </div>

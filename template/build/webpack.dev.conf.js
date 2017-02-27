@@ -20,7 +20,6 @@ module.exports = merge(baseWebpackConfig, {
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
-    // https://github.com/ampedandwired/html-webpack-plugin
     // new HtmlWebpackPlugin({
     //   filename: './src/index.html',
     //   template: './src/index.html',

@@ -5,8 +5,10 @@
 	</div>
 </template>
 <script>
+/*
+*	首页的5个小圆，下面的推广位
+*/
 	import { Search } from 'components';
-
 	export default{
 		data(){
 			return{
@@ -24,6 +26,6 @@
 		}
 	}
 </script>
-<style scoped>
+<style scoped lang="scss">
 	
 </style>

@@ -15,10 +15,7 @@ module.exports = {
   output: {
     path: config.build.assetsRoot,
     publicPath: config.build.assetsPublicPath,
-	/* ---- 生成的例子 vendors.61714a310523a3df9869.js --- */
     filename: '[name].[hash:7].js'
-	/* ---- 生成的例子 vendors.js?f3aaf25de220e214f84e --- */
-    // filename: '[name].js'
   },
   resolve: {
     extensions: ['', '.js', '.vue'],

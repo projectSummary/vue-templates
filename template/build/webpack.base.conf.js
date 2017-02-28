@@ -24,6 +24,7 @@ module.exports = {
       'src': path.resolve(__dirname, '../src'),
       'assets': path.resolve(__dirname, '../src/assets'),
       'components': path.resolve(__dirname, '../src/components'),
+      //$ 表示精准匹配
       'vue$':'vue/dist/vue.common.js'
     }
   },
@@ -51,10 +52,6 @@ module.exports = {
         loader : 'style-loader!css-loader'
       },
       {
-        test: /\.less$/,
-        loader: 'style!css!less'
-      },
-      {
         test: /\.scss$/,
         loader: 'style!css!sass?sourceMap'
       },
@@ -68,7 +65,6 @@ module.exports = {
         loader: 'url?limit=10000&name=fonts/[name].[ext]'
       },
       {
-          //test: /\.(png|jpe?g|gif|svg|woff2?|eot|ttf|otf)(\?.*)?$/,
           test: /\.(png|jpe?g|gif)(\?.*)?$/,
           loader: 'url',
           query: {
@@ -79,7 +75,7 @@ module.exports = {
       {
         test: /vux.src.*?js$/,
         loader: 'babel'
-    }
+      }
     ]
   },
   vue: {
@@ -101,7 +97,7 @@ module.exports = {
 function getEntry(globPath) {
   var entries = {},
     basename, tmp, pathname;
-
+  //node的glob模块允许你使用 *等符号, 来写一个glob规则,像在shell里一样,获取匹配对应规则的文件
   glob.sync(globPath).forEach(function (entry) {
     basename = path.basename(entry, path.extname(entry));
     tmp = entry.split('/').splice(-3);

@@ -24,7 +24,6 @@ module.exports = merge(baseWebpackConfig, {
     })
   },
   plugins: [
-    // http://vuejs.github.io/vue-loader/workflow/production.html
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: '"production"'
@@ -37,24 +36,6 @@ module.exports = merge(baseWebpackConfig, {
     }),
     new CleanPlugin(['../dist']), //清空生成目录
     new webpack.optimize.OccurenceOrderPlugin(),
-    // extract css into its own file
-    // generate dist index.html with correct asset hash for caching.
-    // you can customize output by editing /index.html
-    // see https://github.com/ampedandwired/html-webpack-plugin
-    // new HtmlWebpackPlugin({
-    //   filename: process.env.NODE_ENV === 'testing'
-    //     ? 'index.html'
-    //     : config.build.index,
-    //   template: 'index.html',
-    //   inject: true,
-    //   minify: {
-    //     removeComments: true,
-    //     collapseWhitespace: true,
-    //     removeAttributeQuotes: true
-    //     // more options:
-    //     // https://github.com/kangax/html-minifier#options-quick-reference
-    //   }
-    // })
   ]
 })
 
@@ -75,14 +56,11 @@ function getEntry(globPath) {
 var pages = getEntry('./src/module/**/*.html');
 
 for (var pathname in pages) {
-
-	
   // 配置生成的html文件，定义路径等
   var conf = {
     filename: pathname + '.html',
     template: pages[pathname],   // 模板路径
     inject: true              // js插入位置
-
   };
   
 

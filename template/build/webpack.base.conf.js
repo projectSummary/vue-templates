@@ -2,7 +2,7 @@ var path = require('path')
 var config = require('../config')
 var cssLoaders = require('./css-loaders')
 var projectRoot = path.resolve(__dirname, '../')
-var webpack = require('webpack')
+var webpack = require('webpack');
 var glob = require('glob');
 var entries = getEntry('./src/module/**/*.js'); // 获得入口js文件
 var chunks = Object.keys(entries);
@@ -24,8 +24,6 @@ module.exports = {
       'src': path.resolve(__dirname, '../src'),
       'assets': path.resolve(__dirname, '../src/assets'),
       'components': path.resolve(__dirname, '../src/components'),
-      'vux-components': 'vux/src/components',
-      // 'vue': 'vue/dist/vue.js'
       'vue$':'vue/dist/vue.common.js'
     }
   },

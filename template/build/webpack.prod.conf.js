@@ -14,7 +14,7 @@ module.exports = merge(baseWebpackConfig, {
   //文件的输出配置
   output: {
     path: config.build.assetsRoot,
-    filename: path.join(config.build.assetsSubDirectory, '[name].[hash:7].js'),
+    filename: path.join(config.build.assetsSubDirectory, 'js/[name].[hash:7].js'),
     chunkFilename: path.join(config.build.assetsSubDirectory, '[id].js')
   },
   vue: {
@@ -45,9 +45,9 @@ function getEntry(globPath) {
 
   glob.sync(globPath).forEach(function (entry) {
     basename = path.basename(entry, path.extname(entry));
-    tmp = entry.split('/').splice(-3);
-    pathname = tmp.splice(0, 1) + '/' + basename; // 正确输出js和html的路径
-    entries[pathname] = entry;
+    //tmp = entry.split('/').splice(-3);
+    //pathname = tmp.splice(0, 1) + '/' + basename; // 正确输出js和html的路径
+    entries[basename] = entry;
   });
   console.log(entries);
   return entries;
@@ -62,7 +62,6 @@ for (var pathname in pages) {
     template: pages[pathname],   // 模板路径
     inject: true              // js插入位置
   };
-  
 
   if (pathname in module.exports.entry) {
     conf.chunks = ['vendors', pathname];

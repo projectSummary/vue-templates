@@ -6,23 +6,23 @@
     @mousemove="onDrag"
     @mouseleave="endDrag"
     @touchend="endDrag"
-    class="cs-tab-container">
+    class="m-tab-container">
     <div
       ref="wrap"
-      class="cs-tab-container-wrap">
+      class="m-tab-container-wrap">
       <slot></slot>
     </div>
   </div>
 </template>
 <style lang="css">
-  .cs-tab-container{
-    overflow: hidden;
+  .m-tab-container{
+      overflow: hidden;
       position: relative;
   }
-  .cs-tab-container-wrap{
-    display: flex;
+  .m-tab-container-wrap{
+      display: flex;
   }
-  .cs-tab-container .swipe-transition{
+  .m-tab-container .swipe-transition{
       transition: transform 150ms ease-in-out;
   }
 </style>
@@ -45,7 +45,7 @@ import arrayFindIndex from 'array-find-index';
  * </mt-tab-container>
  */
 export default {
-  name: 'cs-tab-container',
+  name: 'm-tab-container',
   props: {
     value: {},
     swipeable: Boolean

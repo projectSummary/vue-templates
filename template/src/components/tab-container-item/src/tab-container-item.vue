@@ -1,7 +1,7 @@
 <template>
   <div
     v-show="$parent.swiping || id === $parent.currentActive"
-    class="cs-tab-container-item">
+    class="m-tab-container-item">
     <slot></slot>
   </div>
 </template>
@@ -22,13 +22,13 @@
  * </mt-tab-container>
  */
 export default {
-  name: 'cs-tab-container-item',
+  name: 'm-tab-container-item',
   props: ['id']
 };
 </script>
 
 <style>
-.cs-tab-container-item{
+.m-tab-container-item{
   flex-shrink: 0;
   width: 100%;
 }

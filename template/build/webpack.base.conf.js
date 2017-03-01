@@ -15,7 +15,7 @@ module.exports = {
   output: {
     path: config.build.assetsRoot,
     publicPath: config.build.assetsPublicPath,
-    filename: '[name].[hash:7].js'
+    filename: 'js/[name].[hash:7].js'
   },
   resolve: {
     extensions: ['', '.js', '.vue'],
@@ -99,7 +99,7 @@ function getEntry(globPath) {
   //node的glob模块允许你使用 *等符号, 来写一个glob规则,像在shell里一样,获取匹配对应规则的文件
   glob.sync(globPath).forEach(function (entry) {
     basename = path.basename(entry, path.extname(entry));
-    tmp = entry.split('/').splice(-3);
+    // tmp = entry.split('/').splice(-3);
     // pathname = tmp.splice(0, 1) + '/' + basename; // 正确输出js和html的路径
     entries[basename] = entry;
   });

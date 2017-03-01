@@ -14,11 +14,9 @@ Object.keys(baseWebpackConfig.entry).forEach(function (name) {
 module.exports = merge(baseWebpackConfig, {
   devtool: '#eval-source-map',
   plugins: [
-    // https://github.com/glenjamin/webpack-hot-middleware#installation--usage
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin(),
-    
+    new webpack.NoErrorsPlugin()
   ]
 })
 

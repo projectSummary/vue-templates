@@ -9,6 +9,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin')
 var CleanPlugin = require('clean-webpack-plugin')//webpack插件，用于清除目录文件
 var glob = require('glob');
 
+console.log('process.env.NODE_ENV',process.env.NODE_ENV);
 module.exports = merge(baseWebpackConfig, {
   //devtool: config.build.productionSourceMap ? '#source-map' : false,
   //文件的输出配置
@@ -24,18 +25,19 @@ module.exports = merge(baseWebpackConfig, {
     })
   },
   plugins: [
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: '"production"'
-      }
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false
-      }
-    }),
-    new CleanPlugin(['../dist']), //清空生成目录
-    new webpack.optimize.OccurenceOrderPlugin(),
+    // new webpack.DefinePlugin({
+    //   'process.env': {
+    //     NODE_ENV: '"production"'
+    //   }
+    // }),
+    // 压缩项目代码
+    // new webpack.optimize.UglifyJsPlugin({
+    //   compress: {
+    //     warnings: false
+    //   }
+    // }),
+    new CleanPlugin(['dist']), //清空生成目录
+    new webpack.optimize.OccurenceOrderPlugin()
   ]
 })
 
@@ -65,12 +67,18 @@ for (var pathname in pages) {
 
   if (pathname in module.exports.entry) {
     conf.chunks = ['vendors', pathname];
-    conf.hash = true;
+    conf.hash = false;
   }
   
   module.exports.plugins.push(new HtmlWebpackPlugin(conf));
 }
-
+if(process.env.NODE_ENV === "production"){
+  module.exports.plugins.push(new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      }
+    }));
+}
 
 
 

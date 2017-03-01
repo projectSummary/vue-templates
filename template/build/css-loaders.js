@@ -1,5 +1,3 @@
-// https://github.com/webpack/extract-text-webpack-plugin/tree/webpack-1
-//Extract text from bundle into a file.
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = function (options) {

@@ -18,7 +18,6 @@
 </template>
 <script>
 	import Lib from 'assets/Lib.js'
-	
 	export default{
 		data(){
 			return{
@@ -50,14 +49,13 @@
 					that.list = $data.list;
 				},(response) => {
 					//fail
-
 				});
 			}
 		}
 
 	}
 </script>
-<style scoped>
+<style >
 @import '../../assets/style/css.css';
 .list-app{
 	background-color: #eee;
@@ -66,7 +64,6 @@
   width: 100%;
   height: 125px;
 }
-
 .weui-loadmore{
   width: 65%;
   margin:1.5em auto;

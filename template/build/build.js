@@ -1,5 +1,5 @@
 require('shelljs/global')
-env.NODE_ENV = 'production'
+// env.NODE_ENV = 'production'
 
 var path = require('path')
 var config = require('../config')

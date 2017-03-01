@@ -110,7 +110,7 @@
 
 	}
 </script>
-<style scoped>
+<style >
 @import '../../assets/style/css.css';
 .detail-container{
 	background-color: #fff;

@@ -1,7 +1,7 @@
-var path = require('path')
-var config = require('../config')
-var cssLoaders = require('./css-loaders')
-var projectRoot = path.resolve(__dirname, '../')
+var path = require('path');
+var config = require('../config');
+var cssLoaders = require('./css-loaders');
+var projectRoot = path.resolve(__dirname, '../');
 var webpack = require('webpack');
 var glob = require('glob');
 var entries = getEntry('./src/module/**/*.js'); // 获得入口js文件
@@ -49,7 +49,7 @@ module.exports = {
       },
       {
         test   : /\.css$/,
-        loader : 'style-loader!css-loader'
+        loader : ExtractTextPlugin.extract("style", "css")
       },
       {
         test: /\.scss$/,

@@ -1,5 +1,5 @@
 <template>
-	<div >
+	<div>
  		<navbar :fixed="true" v-model="selected">
  			<tab-item id="1">选项一</tab-item>
  			<tab-item id="2">选项二</tab-item>
@@ -79,10 +79,10 @@
 		}
 	}
 </script>
-<style scoped lang="scss">
+<style lang="scss" rel="stylesheet/scss">
+@import '../../assets/style/css.css';
 	.app-tab-container{
 		margin-top: 50px;
-
 		.m-circle{
 			ul{
 				height: auto;

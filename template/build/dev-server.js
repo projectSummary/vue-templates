@@ -4,19 +4,18 @@ var webpack = require('webpack')
 var config = require('../config')
 var proxyMiddleware = require('http-proxy-middleware')
 
-var webpackConfig = process.env.NODE_ENV === 'testing'
-  ? require('./webpack.prod.conf')
-  : require('./webpack.dev.conf')
+var webpackConfig = require('./webpack.dev.conf');
 
 // default port where dev server listens for incoming traffic
 var port = process.env.PORT || config.dev.port
 // Define HTTP proxies to your custom API backend
 // https://github.com/chimurai/http-proxy-middleware 
 var proxyTable = config.dev.proxyTable;
-
+//express 启动一个服务
 var app = express();
+// 启动webpack进行编译
 var compiler = webpack(webpackConfig);
-//webpack-dev-middleware 将webpack打包中间件，给express使用
+//启动 webpack-dev-middleware 将编译后的文件暂存到内存中 
 var devMiddleware = require('webpack-dev-middleware')(compiler, {
   publicPath: webpackConfig.output.publicPath,
   stats: {
@@ -24,7 +23,7 @@ var devMiddleware = require('webpack-dev-middleware')(compiler, {
     chunks: false
   }
 });
-
+//启动 webpack-hot-middleware
 var hotMiddleware = require('webpack-hot-middleware')(compiler)
 // force page reload when html-webpack-plugin template changes
 compiler.plugin('compilation', function (compilation) {
@@ -34,7 +33,7 @@ compiler.plugin('compilation', function (compilation) {
   })
 })
 
-// proxy api requests
+// 将 proxyTable 中的请求配置挂在到启动的 express 服务上
 Object.keys(proxyTable).forEach(function (context) {
   var options = proxyTable[context]
   if (typeof options === 'string') {
@@ -43,17 +42,16 @@ Object.keys(proxyTable).forEach(function (context) {
   app.use(proxyMiddleware(context, options))
 })
 
-// handle fallback for HTML5 history API
+// 使用 connect-history-api-fallback 匹配资源，如果不匹配就可以重定向到指定地址
 app.use(require('connect-history-api-fallback')())
 
-// serve webpack bundle output
+// 将暂存到内存中的 webpack 编译后的文件挂在到 express 服务上
 app.use(devMiddleware)
 
-// enable hot-reload and state-preserving
-// compilation error display
+// 将 Hot-reload 挂在到 express 服务上
 app.use(hotMiddleware)
 
-// serve pure static assets
+// 为静态资源提供响应服务
 var staticPath = path.join(config.build.assetsPublicPath, config.build.assetsSubDirectory)
 app.use(staticPath, express.static('./static'))
 

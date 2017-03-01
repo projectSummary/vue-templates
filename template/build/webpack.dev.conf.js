@@ -1,15 +1,14 @@
 var path = require('path');
-var webpack = require('webpack')
-var merge = require('webpack-merge')
-var baseWebpackConfig = require('./webpack.base.conf')
-var HtmlWebpackPlugin = require('html-webpack-plugin')
-
+var webpack = require('webpack');
+var merge = require('webpack-merge');
+var baseWebpackConfig = require('./webpack.base.conf');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 var glob = require('glob');
 
 // add hot-reload related code to entry chunks
 Object.keys(baseWebpackConfig.entry).forEach(function (name) {
   baseWebpackConfig.entry[name] = ['./build/dev-client'].concat(baseWebpackConfig.entry[name])
-})
+});
 
 module.exports = merge(baseWebpackConfig, {
   devtool: '#eval-source-map',
@@ -21,15 +20,13 @@ module.exports = merge(baseWebpackConfig, {
 })
 
 function getEntry(globPath) {
-  var entries = {},
-    basename, tmp, pathname;
+  var entries = {},basename, tmp, pathname;
   glob.sync(globPath).forEach(function (entry) {
     basename = path.basename(entry, path.extname(entry));
     // tmp = entry.split('/').splice(-3);
     // pathname = tmp.splice(0, 1) + '/' + basename; // 正确输出js和html的路径
     entries[basename] = entry;
   });
-
   return entries;
 }
 
@@ -41,14 +38,12 @@ for (var pathname in pages) {
   var conf = {
     filename: pathname + '.html',
     template: pages[pathname],   // 模板路径
-    inject: true              // js插入位置
+    inject: true              // js插入位置,javascript 资源将被放置到 body 元素的底部
   };
-  
   if (pathname in module.exports.entry) {
     conf.chunks = ['vendors', pathname];
-    conf.hash = true;
+    conf.hash = false;
   }
-  
   module.exports.plugins.push(new HtmlWebpackPlugin(conf));
 }
 

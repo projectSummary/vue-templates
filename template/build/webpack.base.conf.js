@@ -49,7 +49,7 @@ module.exports = {
       },
       {
         test   : /\.css$/,
-        loader : ExtractTextPlugin.extract("style", "css")
+        loader : ExtractTextPlugin.extract("style-loader", "css-loader")
       },
       {
         test: /\.scss$/,
@@ -79,7 +79,9 @@ module.exports = {
     ]
   },
   vue: {
-    loaders: cssLoaders()
+    loaders: cssLoaders({
+      extract: true
+    })
   },
   plugins: [
     // 提取公共模块

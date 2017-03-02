@@ -17,7 +17,7 @@
 </div>
 </template>
 <script>
-	import Lib from 'assets/Lib.js'
+	import Lib from 'assets/Lib.js';
 	export default{
 		data(){
 			return{
@@ -56,7 +56,7 @@
 	}
 </script>
 <style >
-@import '../../assets/style/css.css';
+
 .list-app{
 	background-color: #eee;
 }

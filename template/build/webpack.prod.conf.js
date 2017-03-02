@@ -9,7 +9,6 @@ var HtmlWebpackPlugin = require('html-webpack-plugin')
 var CleanPlugin = require('clean-webpack-plugin')//webpack插件，用于清除目录文件
 var glob = require('glob');
 
-console.log('process.env.NODE_ENV',process.env.NODE_ENV);
 module.exports = merge(baseWebpackConfig, {
   //devtool: config.build.productionSourceMap ? '#source-map' : false,
   //文件的输出配置

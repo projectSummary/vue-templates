@@ -61,6 +61,7 @@
 	/*
 	*	首页的5个小圆，下面的推广位,tab切换
 	*/
+	import '../../assets/style/css.css';
 	import { Navbar ,TabItem,TabContainer , TabContainerItem} from 'components';
 	export default{
 		data(){
@@ -80,7 +81,6 @@
 	}
 </script>
 <style lang="scss" rel="stylesheet/scss">
-@import '../../assets/style/css.css';
 	.app-tab-container{
 		margin-top: 50px;
 		.m-circle{

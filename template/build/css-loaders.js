@@ -1,4 +1,4 @@
-var ExtractTextPlugin = require('extract-text-webpack-plugin')
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = function (options) {
   options = options || {}
@@ -23,7 +23,6 @@ module.exports = function (options) {
     }
   }
 
-  // http://vuejs.github.io/vue-loader/configurations/extract-css.html
   return {
     css: generateLoaders(['css']),
     postcss: generateLoaders(['css']),

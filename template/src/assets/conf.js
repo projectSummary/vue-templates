@@ -1,5 +1,4 @@
 var Rxports = {
-	appname:'appname'
 }	
 module.exports = Rxports
 

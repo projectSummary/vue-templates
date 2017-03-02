@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div v-cloak>
  		<navbar :fixed="true" v-model="selected">
  			<tab-item id="1">选项一</tab-item>
  			<tab-item id="2">选项二</tab-item>
@@ -70,7 +70,7 @@
 			}
 		},
 		components:{
-			Navbar , TabItem,TabContainer,TabContainerItem
+			Navbar , TabItem , TabContainer , TabContainerItem
 		},
 		mounted(){
 

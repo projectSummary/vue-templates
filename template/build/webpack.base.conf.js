@@ -6,6 +6,7 @@ var webpack = require('webpack');
 var glob = require('glob');
 var entries = getEntry('./src/module/**/*.js'); // 获得入口js文件
 var chunks = Object.keys(entries);
+var projectRoot = path.resolve(__dirname, '../');
 
 // 将样式提取到单独的css文件中，而不是打包到js文件或使用style标签插入在head标签中
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -32,6 +33,20 @@ module.exports = {
     fallback: [path.join(__dirname, '../node_modules')]
   },
   module: {
+     preLoaders: [
+      {
+        test: /\.vue$/,
+        loader: 'eslint',
+        include: projectRoot,
+        exclude: /node_modules/
+      },
+      {
+        test: /\.js$/,
+        loader: 'eslint',
+        include: projectRoot,
+        exclude: /node_modules/
+      }
+    ],
     loaders: [
       {
         test: /\.vue$/,

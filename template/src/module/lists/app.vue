@@ -1,6 +1,5 @@
 <template>
 <div class="list-app">
-<!-- 首页头图 -->
 <img class="head-img" src="../../assets/img/topImg.png" height="250" width="750">
 <!-- 入口列表 -->
 <div class="list-items">

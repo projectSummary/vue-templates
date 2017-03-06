@@ -27,16 +27,8 @@
 				<a href="../ver_record/ver_record?fid=id">全部</a>
 			</span>
 		</div>
-		<div class="ver-content">
-            <div class="ver">
-            	<div class="ver-left">{{ ver }}</div>
-            	<div class="ver-right">{{ ttime }}</div>
-            </div>
-            <div class="limit-two">{{ ver_content }}</div>
-        </div>
 	</div>
     <div v-on:click="toast">点击弹出Toast</div>
-    <actionsheet :actions="actions" :visible.sync="true"></actionsheet>
 </div>
 </template>
 <script>
@@ -111,7 +103,6 @@
 	}
 </script>
 <style >
-@import '../../assets/style/css.css';
 .detail-container{
 	background-color: #fff;
 }

@@ -53,7 +53,14 @@
 						</ul>
 				</div>
 			</tab-container-item>
-			<tab-container-item id="2">我是选项二</tab-container-item>
+			<tab-container-item id="2">
+				 <button v-on:click="show = !show">
+    Toggle
+  </button>
+  <transition name="fade">
+    <p v-if="show">hello</p>
+  </transition>
+			</tab-container-item>
 		</tab-container>
 	</div>
 </template>
@@ -66,7 +73,8 @@
 	export default{
 		data(){
 			return{
-				selected:"2"
+				selected:"2",
+				show:true
 			}
 		},
 		components:{
@@ -112,5 +120,11 @@
 				}
 			}
 		}
+	}
+	.fade-enter-active, .fade-leave-active {
+  			transition: opacity .5s
+	}
+	.fade-enter, .fade-leave-active {
+  		opacity: 0
 	}
 </style>

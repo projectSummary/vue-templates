@@ -4,7 +4,7 @@
   "description": "基于webpack的vue",
   "author": "",
   "scripts": {
-    "dev": "node build/dev-server.js",
+    "dev": "NODE_ENV=development node build/dev-server.js",
     "release": "NODE_ENV=production node build/build.js",
     "build": "NODE_ENV=develop node build/build.js"
   },

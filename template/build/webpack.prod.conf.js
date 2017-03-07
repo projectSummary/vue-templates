@@ -35,7 +35,12 @@ module.exports = merge(baseWebpackConfig, {
     //     warnings: false
     //   }
     // }),
-    new CleanPlugin(['dist']), //清空生成目录
+    //清空生成目录
+    new CleanPlugin(['dist'],{
+        "root": path.resolve(__dirname, './build'),
+         verbose: true,
+         dry: false
+     }), 
     new webpack.optimize.OccurenceOrderPlugin()
   ]
 })

@@ -1,7 +1,7 @@
 var path = require('path');
 var config = require('../config');
 var cssLoaders = require('./css-loaders');
-var projectRoot = path.resolve(__dirname, '../');
+// var projectRoot = path.resolve(__dirname, '../');
 var webpack = require('webpack');
 var glob = require('glob');
 var entries = getEntry('./src/module/**/*.js'); // 获得入口js文件
@@ -77,14 +77,14 @@ module.exports = {
       //字体
       {
         test: /\.((ttf|eot|woff|svg)(\?t=[0-9]\.[0-9]\.[0-9]))|(ttf|eot|woff|svg)\??.*$/,
-        loader: 'url?limit=10000&name=fonts/[name].[ext]'
+        loader: 'url?limit=10000&name=fonts/[name].[hash:7].[ext]'
       },
       {
           test: /\.(png|jpe?g|gif)(\?.*)?$/,
           loader: 'url',
           query: {
             limit: 10000,
-            name: path.join(config.build.assetsSubDirectory, 'img/[name].[ext]')
+            name: path.join(config.build.assetsSubDirectory, 'img/[name].[hash:7].[ext]')
           }
       },
       {
@@ -96,7 +96,13 @@ module.exports = {
   vue: {
     loaders: cssLoaders({
       extract: true
-    })
+    }),
+    //usage:<avatar default-src="./assets/default-avatar.png"></avatar>
+    transformToRequire: {
+      avatar: ['default-src']
+    },
+    //去掉元素间的空格
+    preserveWhitespace: false
   },
   plugins: [
     // 提取公共模块

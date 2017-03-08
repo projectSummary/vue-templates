@@ -33,7 +33,7 @@
 </template>
 <script>
 	import Lib from 'assets/Lib.js'
-    import {Toast,Indicator,MessageBox,Actionsheet} from 'components';
+    import {Toast} from 'components';
     import axios from 'axios';
 	export default{
 		data(){

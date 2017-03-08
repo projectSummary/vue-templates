@@ -81,7 +81,7 @@ if(process.env.NODE_ENV === "production"){
       compress: {
         warnings: false
       }
-    }));
+  }));
 }
 
 

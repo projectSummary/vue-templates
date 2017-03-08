@@ -2,14 +2,11 @@ var path = require('path')
 var express = require('express')
 var webpack = require('webpack')
 var config = require('../config')
-var proxyMiddleware = require('http-proxy-middleware')
+var proxyMiddleware = require('http-proxy-middleware');
 
 var webpackConfig = require('./webpack.dev.conf');
 
-// default port where dev server listens for incoming traffic
-var port = process.env.PORT || config.dev.port
-// Define HTTP proxies to your custom API backend
-// https://github.com/chimurai/http-proxy-middleware 
+var port = process.env.PORT || config.dev.port;
 var proxyTable = config.dev.proxyTable;
 //express 启动一个服务
 var app = express();
@@ -25,13 +22,13 @@ var devMiddleware = require('webpack-dev-middleware')(compiler, {
 });
 //启动 webpack-hot-middleware
 var hotMiddleware = require('webpack-hot-middleware')(compiler)
-// force page reload when html-webpack-plugin template changes
+
 compiler.plugin('compilation', function (compilation) {
   compilation.plugin('html-webpack-plugin-after-emit', function (data, cb) {
     hotMiddleware.publish({ action: 'reload' })
     cb()
   })
-})
+});
 
 // 将 proxyTable 中的请求配置挂在到启动的 express 服务上
 Object.keys(proxyTable).forEach(function (context) {
@@ -40,16 +37,16 @@ Object.keys(proxyTable).forEach(function (context) {
     options = { target: options }
   }
   app.use(proxyMiddleware(context, options))
-})
+});
 
 // 使用 connect-history-api-fallback 匹配资源，如果不匹配就可以重定向到指定地址
 app.use(require('connect-history-api-fallback')())
 
 // 将暂存到内存中的 webpack 编译后的文件挂在到 express 服务上
-app.use(devMiddleware)
+app.use(devMiddleware);
 
 // 将 Hot-reload 挂在到 express 服务上
-app.use(hotMiddleware)
+app.use(hotMiddleware);
 
 // 为静态资源提供响应服务
 var staticPath = path.join(config.build.assetsPublicPath, config.build.assetsSubDirectory)

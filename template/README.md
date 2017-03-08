@@ -26,7 +26,6 @@
 * header
 * button
 
-
 ### Form Components
 
 ### CSS 命名空间
@@ -59,6 +58,8 @@ v-for：在使用v-for遍历对象的时候，当存在index时，1.0的参数�
 v-for：1.0中，v-for块内有一个隐性的特殊变量$index可以获取当前数组的索引，在2.0中移除了，改为了以上这种显式的定义方式；
 key：key替代track-by
 
+### 坚持ES6 的标准
+使用import取代require
 
 
 

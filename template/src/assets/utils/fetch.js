@@ -17,7 +17,8 @@ export default async(type='GET',url = '', data = {}, method= 'fetch')=>{
 
 	if(window.fetch && method === 'fetch'){
 		let requestConfig = {
-			credentials: 'include'
+			credentials: 'include',
+			method:type
 		};
 	}else{
 

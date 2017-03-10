@@ -1,1 +1,1 @@
-module.exports = require('./src/header.vue')
+export { default } from './src/header.vue';

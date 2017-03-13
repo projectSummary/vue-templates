@@ -16,6 +16,7 @@
     "babel-runtime": "^6.0.0",
     "clean-webpack-plugin": "^0.1.10",
     "glob": "^7.0.5",
+    "mint-ui": "^2.2.1",
     "node-sass": "^4.1.1",
     "sass-loader": "^4.1.1",
     "style-loader": "^0.13.1",

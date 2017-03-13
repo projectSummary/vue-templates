@@ -13,19 +13,19 @@
 							<span>优惠券</span>
 						</li>
 						<li>
-							<a href="#"><img src="../../assets/img/hua.jpg"></a>
+							<a href="#"><img src="../../assets/img/smzdm_178.jpg"></a>
 							<span>优惠券</span>
 						</li>
 						<li>
-							<a href="#"><img src="../../assets/img/hua.jpg"></a>
+							<a href="#"><img src="../../assets/img/smzdm_178.jpg"></a>
 							<span>优惠券</span>
 						</li>
 						<li>
-							<a href="#"><img src="../../assets/img/hua.jpg"></a>
+							<a href="#"><img src="../../assets/img/smzdm_178.jpg"></a>
 							<span>优惠券</span>
 						</li>
 						<li>
-							<a href="#"><img src="../../assets/img/hua.jpg"></a>
+							<a href="#"><img src="../../assets/img/smzdm_178.jpg"></a>
 							<span>优惠券</span>
 						</li>
 					</ul>
@@ -35,19 +35,19 @@
 							<span>优惠券</span>
 						</li>
 						<li>
-							<a href="#"><img src="../../assets/img/hua.jpg"></a>
+							<a href="#"><img src="../../assets/img/smzdm_178.jpg"></a>
 							<span>优惠券</span>
 						</li>
 						<li>
-							<a href="#"><img src="../../assets/img/hua.jpg"></a>
+							<a href="#"><img src="../../assets/img/smzdm_178.jpg"></a>
 							<span>优惠券</span>
 						</li>
 						<li>
-							<a href="#"><img src="../../assets/img/hua.jpg"></a>
+							<a href="#"><img src="../../assets/img/smzdm_178.jpg"></a>
 							<span>优惠券</span>
 						</li>
 						<li>
-							<a href="#"><img src="../../assets/img/hua.jpg"></a>
+							<a href="#"><img src="../../assets/img/smzdm_178.jpg"></a>
 							<span>优惠券</span>
 						</li>
 						</ul>

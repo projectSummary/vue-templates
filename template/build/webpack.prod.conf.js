@@ -10,7 +10,7 @@ var CleanPlugin = require('clean-webpack-plugin')//webpack插件，用于清除�
 var glob = require('glob');
 
 module.exports = merge(baseWebpackConfig, {
-  //devtool: config.build.productionSourceMap ? '#source-map' : false,
+  devtool: config.build.productionSourceMap ? '#source-map' : false,
   //文件的输出配置
   output: {
     path: config.build.assetsRoot,

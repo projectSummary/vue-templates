@@ -1,7 +1,6 @@
 var path = require('path');
 var config = require('../config');
 var cssLoaders = require('./css-loaders');
-// var projectRoot = path.resolve(__dirname, '../');
 var webpack = require('webpack');
 var glob = require('glob');
 var entries = getEntry('./src/module/**/*.js'); // 获得入口js文件
@@ -68,7 +67,7 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        loader: 'style!css!sass?sourceMap'
+        loader: ExtractTextPlugin.extract('style-loader','css-loader?sourceMap!sass-loader?sourceMap')
       },
       {
         test: /\.html$/,
@@ -95,7 +94,8 @@ module.exports = {
   },
   vue: {
     loaders: cssLoaders({
-      extract: true
+      extract: true,
+      sourceMap: config.build.productionSourceMap
     }),
     //usage:<avatar default-src="./assets/default-avatar.png"></avatar>
     transformToRequire: {
@@ -126,6 +126,5 @@ function getEntry(globPath) {
     // pathname = tmp.splice(0, 1) + '/' + basename; // 正确输出js和html的路径
     entries[basename] = entry;
   });
-
   return entries;
 }

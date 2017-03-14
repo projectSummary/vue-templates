@@ -1,30 +1,26 @@
 {
-  "name": "vue-multi-page",
-  "version": "1.2.0",
-  "description": "基于webpack的vue",
+  "name": "m_framework_demo",
+  "version": "1.0.0",
+  "description": "A demo for building mobile web UI base on vue.js",
   "author": "",
   "scripts": {
     "dev": "NODE_ENV=development node build/dev-server.js",
     "release": "NODE_ENV=production node build/build.js",
-    "build": "NODE_ENV=develop node build/build.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/projectSummary/vue-templates.git"
+    "build": "NODE_ENV=development node build/build.js"
   },
   "dependencies": {
-    "babel-runtime": "^6.0.0",
-    "clean-webpack-plugin": "^0.1.10",
-    "glob": "^7.0.5",
     "mint-ui": "^2.2.1",
+    "vue": "^2.2.1",
+    "axios": "^0.15.3"
+  },
+  "devDependencies": {
+    "vue-template-compiler": "^2.2.1",
     "node-sass": "^4.1.1",
     "sass-loader": "^4.1.1",
     "style-loader": "^0.13.1",
-    "vue": "^2.2.1",
-    "vue-template-compiler": "^2.2.1"
-  },
-  "devDependencies": {
-    "axios": "^0.15.3",
+    "glob": "^7.0.5",
+    "clean-webpack-plugin": "^0.1.10",
+    "babel-runtime": "^6.0.0",
     "babel-core": "^6.0.0",
     "babel-eslint": "^7.1.1",
     "babel-loader": "^6.0.0",

@@ -1,4 +1,8 @@
 [v-cloak]{display:none}
+html{
+  font-size: 62.5%;
+  -webkit-tap-highlight-color: transparent;
+}
 body{
     margin: 0;
     display: block;
@@ -6,6 +10,44 @@ body{
     font-size: 62.5%;
     font-family: "PingFang SC Light","Heiti SC","San Francisco","Helvetica";
 }
+li{
+    list-style-type: none;
+}
+/*box-sizing*/
+*{
+  box-sizing: border-box;
+}
+p,blockquote,ul,li{
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+a{
+  text-decoration:none;
+  -webkit-tap-highlight-color:rgba(255,255,255,0.35);
+  -webkit-touch-callout:none;
+}
+h1,h2,h3,h4,h5,h6{
+  margin:0;
+}
+i,em,address,cite{
+  font-style:normal;
+}
+a:active,a:visited,img{
+  outline:none;
+}
+input,button,select,textarea{
+  outline:none;
+  -webkit-appearance:none;
+  -webkit-tap-highlight-color:rgba(255,255,255,0.35);
+}
+textarea{
+  resize:none
+}
+form{
+  margin-bottom: 0;
+}
+/* icons */
 .icons{
     background: url(data:image/png;base64,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);
     background-size: 35px 258px;
@@ -61,7 +103,6 @@ body{
     background-position-y: -229px;
 }
 
-
 .icons-redtrue {
     width: 9px;
     height: 7px;
@@ -85,30 +126,6 @@ body{
     height: 25px;
     background-position: 0 0;
 }
-.mask {
-    width: 100%;
-    height: 100%;
-    background-color: #000;
-    opacity: 0.5;
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    z-index: 2;
-    display: none;
-}
 
-.flex-item{
-    display: flex;
-    justify-content:center;
-    align-items:center;
-}
-.icons-uparrow {
-    width: 16px;
-    height: 9px;
-    background-position-x: 0;
-    background-position-y: -158px;
-}
 
 

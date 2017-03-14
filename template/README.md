@@ -1,18 +1,22 @@
-# vue && webpack
-# 安装install
+### 安装install
  `npm install`
-# 调试环境
- `npm run dev`
-# 生产环境
- `npm run build`
-## version
-1.2.1
-## 公告
-* detail.html 和 list.html 不再使用
-* 新建test.html
-*
 
-## components
+### 调试环境
+ `npm run dev`
+### 生产环境
+*  `npm run build`  未压缩代码，上158
+*  `npm run release` 压缩上线代码
+  
+### 技术栈
+vue@2.x, webpack@1.x, axios, mint-ui@2.x, babel, eslint, sass, express
+
+### version
+1.3.2
+
+## 公告
+* 新建test.html
+
+### components
 组件暂时是有三种
 
 ### JS Components
@@ -29,18 +33,13 @@
 ### Form Components
 
 ### CSS 命名空间
-cs 作为前缀
-
-### 坑
-* 一个模版下面只能放置一个根节点
-* ready() 改为 mounted()
-
+zdm 作为前缀
 
 ### 数据请求
 
 使用的是[axios](https://github.com/mzabriskie/axios)
 
-####例子
+#### 例子
 ```javascript
 import axios from 'axios';
 axios.get('http://api.smzdm.com/ev1/finder_detail/',{

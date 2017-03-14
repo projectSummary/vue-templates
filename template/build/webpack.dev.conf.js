@@ -12,7 +12,7 @@ Object.keys(baseWebpackConfig.entry).forEach(function (name) {
 });
 
 module.exports = merge(baseWebpackConfig, {
-  devtool: '#eval-source-map',
+  devtool: '#source-map',
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),

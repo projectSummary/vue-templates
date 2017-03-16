@@ -68,7 +68,7 @@
 	/*
 	*	首页的5个小圆，下面的推广位,tab切换
 	*/
-	import '../../assets/style/css.scss';
+	import Lib from 'assets/Lib';
 	import { Navbar,TabItem,TabContainer,TabContainerItem} from 'components';
 	export default{
 		data(){

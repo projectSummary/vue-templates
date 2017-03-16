@@ -63,7 +63,7 @@
 </template>
 <script>
     import Vue from 'vue';
-	  import Lib from 'assets/Lib.js'
+	  import Lib from 'assets/Lib';
     import axios from 'axios';
     import { zdmHeader } from 'components';
     import { Swipe, SwipeItem, InfiniteScroll} from 'mint-ui';
@@ -134,12 +134,12 @@
 </script>
 <style scoped lang="scss">
     .detail{
-      color: #3e474e;
+      color: $red;
       .foot-banner{
         position: fixed;
         left: 0;
         bottom: 0;
-        font-size: 15px;
+        font-size: rem(30);
         width: 100%;
         background: rgba(0,0,0,.7);
         z-index: 9;
@@ -264,7 +264,7 @@
           overflow: hidden;
           font-size: 1em;
           font-weight: 400;
-          color: #3e474e;
+          color: $red;
         }
         .tips{
           em{

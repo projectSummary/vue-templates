@@ -14,7 +14,7 @@
 	header
 */
 export default{
-	name: 'header',
+	name: 'zdm-header',
 	data(){
 		return{
 
@@ -27,13 +27,12 @@ export default{
 
 </script>
 <style scoped lang="scss">
-	@import '../../../assets/style/var.scss';
 	.zdm-header{
 		box-sizing: border-box;
 		position: fixed;
-		color: $white;
+		color: #fff;
 		font-size: 15px;
-		background-color: $red;
+		background-color: #f04848;
 		top: 0;
 		left: 0;
 		z-index: 1300;

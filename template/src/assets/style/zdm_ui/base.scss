@@ -1,0 +1,45 @@
+[v-cloak]{display:none}
+html{
+}
+body{
+	padding:0;
+	margin:0 auto;
+	font-family:"PingFang SC Light","Heiti SC","San Francisco","Helvetica";
+	background-color:$body-bg;
+	max-width:750px;
+}
+*{
+	box-sizing:border-box;
+}
+p,blockquote,ul,li{
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+a{
+	text-decoration:none;
+	// color:#0066c0;
+	-webkit-tap-highlight-color:rgba(255,255,255,0.35);
+	-webkit-touch-callout:none;
+}
+h1,h2,h3,h4,h5,h6{
+	margin:0;
+}
+i,em,address,cite{
+	font-style:normal;
+}
+a:active,a:visited,img{
+	outline:none;
+}
+input,button,select,textarea{
+	outline:none;
+	-webkit-appearance:none;
+	-webkit-tap-highlight-color:rgba(255,255,255,0.35);
+}
+textarea{
+	resize:none
+}
+::-webkit-input-placeholder { color:$text-lightgray; }
+::-moz-placeholder { color:$text-lightgray; } /* firefox 19+ */
+:-ms-input-placeholder { color:$text-lightgray; } /* ie */
+input:-moz-placeholder { color:$text-lightgray; }

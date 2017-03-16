@@ -1,0 +1,31 @@
+/* 颜色*/
+$red: #ff4342;
+$white: #fff;
+$black: #000;
+$gray: #dbdbdb;
+/* 字体颜色*/
+$text-white: #fff;
+$text-black: #262626;
+$text-gray: #999;
+$text-lightgray: #d1d1d1;
+$text-lightergray: #ccc;
+$text-red: $red;
+$text-brown: #b19059;
+/* 链接*/
+$link-blue: #1a64a8;
+/* 边框*/ 
+$border-lightergray: #eee;
+$border-gray: #dbdbdb;
+$border-darkgray: #ccc;
+$border: 1px solid $border-gray;
+$border-red:$red;
+$border-black:$black;
+/* 背景*/
+$body-bg: #fff;
+$cover-bg:rgba(0,0,0,0.5);
+/* 主体水平方向的间距 */
+$padding-h-lg:5.333%;//对应padding值为40px的
+$padding-h:2.933%;//对应padding值为22px的
+/* 主体宽度 */
+$big-width:89.333%;
+

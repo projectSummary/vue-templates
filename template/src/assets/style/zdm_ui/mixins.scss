@@ -1,0 +1,139 @@
+/* 生成各个上下左右四个方向的箭头
+ * $width 箭头水平跨度
+ * $height 箭头竖直方向跨度
+ * $color 箭头主体颜色
+ * $bg-color 箭头所在环境的背景颜色
+ * $direction 箭头方向，up、down、left、right（上、下、左、右）
+ */
+@mixin arrow($width, $height, $color, $bg-color, $direction){
+    $border-width: 0 $width/2 $height $width/2;
+    $border-color: $color transparent;
+    $after-border-color: $bg-color transparent;
+    $top: 2px;
+    $left: -$width/2;
+    $margin: 0;
+    @if $direction == up{
+        $border-width: 0 $width/2 $height $width/2;
+        $border-color: $color transparent;
+        $after-border-color: $bg-color transparent;
+        $top: 2px;
+        $left: -$width/2;
+    }@else if $direction == down{
+        $border-width: $height $width/2 0 $width/2;
+        $border-color: $color transparent;
+        $after-border-color: $bg-color transparent;
+        $top: -($height + 2px);
+        $left: -$width/2;
+    }@else if $direction == left{
+        $border-width: $height/2 $width $height/2 0;
+        $border-color: transparent $color;
+        $after-border-color: transparent $bg-color;
+        $top: -$height/2;
+        $left: 2px;
+        $margin: 0 2px 0 0;
+    }@else{
+        $border-width: $height/2 0 $height/2 $width;
+        $border-color: transparent $color;
+        $after-border-color: transparent $bg-color;
+        $top: -$height/2;
+        $left: -($width + 2px);
+        $margin: 0 0 0 2px;
+    }
+    position: relative;
+    border-color: $border-color;
+    margin: $margin;
+    &:after {
+        content: "";
+        position: absolute;
+        top: $top;
+        left: $left;
+        border-color: $after-border-color;
+    }
+    &, &:after {
+        display: inline-block;
+        width: 0;
+        height: 0;
+        border-width: $border-width;
+        border-style: solid;
+    }
+}
+@mixin clearfix{
+    zoom: 1;
+    
+    &:before,
+    &:after{
+        content: "";
+        display: table;
+    }
+    &:after{
+        clear: both;
+    }
+}
+@mixin img-center{
+    text-align: center;
+    font-size: 0;
+    zoom: 1;
+    & img,& i{
+        max-height: 100%;
+        max-width: 100%;
+        vertical-align: middle;
+    }
+    &:after{
+        content: "";
+        display: inline-block;
+        width: 0;
+        height: 100%;
+        vertical-align: middle;
+    }
+}
+@mixin btn($bgColor:$white,$textColor:$text-black,$borderColor:$border-lightergray){
+    background-color:$bgColor;
+    color:$textColor;
+    border:1px solid $borderColor;
+    display:inline-block;
+    text-align:center;
+    border-radius:2px;
+    padding:0;
+}
+@mixin flex{
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-ms-flexbox;
+    display:flex;
+}
+@mixin flex-wrap{
+    -webkit-flex-wrap:wrap;
+    -ms-flex-wrap:wrap;
+    flex-wrap:wrap;
+}
+@mixin flex-column{
+    -webkit-box-flex:1;
+    -webkit-flex:1;
+    -ms-flex:1;
+    flex:1;
+}
+@mixin hairlines($border-color,$direction){
+    position: relative;
+    border:none;
+    z-index:0;
+    &:before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index:-1;
+        box-sizing:border-box;
+        
+        @if $direction == bottom or $direction == top or $direction == right or $direction == left{
+            border-#{$direction}: 1px solid $border-color;
+        }@else if $direction == all{
+            border: 1px solid $border-color;
+        }
+        width: 200%;
+        height: 200%;
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5);
+        -webkit-transform-origin: left top;
+        transform-origin: left top;
+    }
+}

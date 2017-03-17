@@ -18,14 +18,15 @@ module.exports = {
     filename: 'js/[name].[hash:7].js'
   },
   resolve: {
-    extensions: ['', '.js', '.vue'],
+    extensions: ['', '.js', '.vue','.scss'],
     fallback: [path.join(__dirname, '../node_modules')],
     alias: {
       'src': path.resolve(__dirname, '../src'),
       'assets': path.resolve(__dirname, '../src/assets'),
       'components': path.resolve(__dirname, '../src/components'),
       //$ 表示精准匹配
-      'vue$':'vue/dist/vue.common.js'
+      'vue$':'vue/dist/vue.common.js',
+      'zdm_ui': path.resolve(__dirname, '../src/assets/style/zdm_ui')
     }
   },
   resolveLoader: {

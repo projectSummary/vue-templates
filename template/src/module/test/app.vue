@@ -69,7 +69,8 @@
 	*	首页的5个小圆，下面的推广位,tab切换
 	*/
 	import Lib from 'assets/Lib';
-	import { Navbar,TabItem,TabContainer,TabContainerItem} from 'components';
+	import { Navbar,TabItem,TabContainer,TabContainerItem} from 'mint-ui';
+	import 'mint-ui/lib/style.css';
 	export default{
 		data(){
 			return{

@@ -59,6 +59,9 @@
        </a>
      </div>
   </div>
+  <div class="upload">
+    
+  </div>
 </div>
 </template>
 <script>
@@ -69,6 +72,7 @@
     import { Swipe, SwipeItem, InfiniteScroll} from 'mint-ui';
     import 'mint-ui/lib/style.css';
     Vue.use(InfiniteScroll);
+
 	export default{
 		data(){
 			return{
@@ -106,33 +110,34 @@
 			that.getData();
 		},
 		methods:{
-			getData(){
-				var that = this;
-				axios.get('http://api.smzdm.com/ev1/finder_detail/',{
-                    params: {
-                        fid: 11
-                    }
-				}).then((response) => {
-					var $data = response.data.data;
-					console.log('data:', $data);
-					that.tobj = $data
-				});
-			},
-      loadMore(){
-        this.loading = true;
-        setTimeout(() => {
-          let last = this.list[this.list.length - 1];
-          for (let i = 1; i <= 10; i++) {
-            this.list.push(last + i);
-          }
-          this.loading = false;
-        }, 2500);
+  			getData(){
+  				var that = this;
+  				axios.get('http://api.smzdm.com/ev1/finder_detail/',{
+                      params: {
+                          fid: 11
+                      }
+  				}).then((response) => {
+  					var $data = response.data.data;
+  					console.log('data:', $data);
+  					that.tobj = $data
+  				});
+  			},
+        loadMore(){
+          this.loading = true;
+          setTimeout(() => {
+            let last = this.list[this.list.length - 1];
+            for (let i = 1; i <= 10; i++) {
+              this.list.push(last + i);
             }
-      	}
+            this.loading = false;
+          }, 2500);
+        }
+  }
 
 	}
 </script>
-<style scoped lang="scss">
+<style lang="scss">
+    @import "~zdm_ui/ct-common";
     .detail{
       color: $red;
       .foot-banner{

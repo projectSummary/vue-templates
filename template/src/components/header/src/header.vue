@@ -27,10 +27,11 @@ export default{
 
 </script>
 <style scoped lang="scss">
+	@import "~zdm_ui/ct-common";
 	.zdm-header{
 		box-sizing: border-box;
 		position: fixed;
-		color: #fff;
+		color: $white;
 		font-size: 15px;
 		background-color: #f04848;
 		top: 0;

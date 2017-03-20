@@ -17,6 +17,10 @@
           </swipe-item>
         </swipe>
   </div>
+  <div class="upload">
+    <upload :url="imgurl">
+    </upload>
+  </div>
   <ul class="list list_preferential" v-infinite-scroll="loadMore"
   infinite-scroll-disabled="loading"
   infinite-scroll-distance="10">
@@ -59,16 +63,14 @@
        </a>
      </div>
   </div>
-  <div class="upload">
-    
-  </div>
+  
 </div>
 </template>
 <script>
     import Vue from 'vue';
 	  import Lib from 'assets/Lib';
     import axios from 'axios';
-    import { zdmHeader } from 'components';
+    import { zdmHeader, Upload } from 'components';
     import { Swipe, SwipeItem, InfiniteScroll} from 'mint-ui';
     import 'mint-ui/lib/style.css';
     Vue.use(InfiniteScroll);
@@ -78,6 +80,7 @@
 			return{
         title:"什么值得买",
 				loading: false,
+        imgurl: "//new.brand.smzdm.com/common/upload_pic_ajax/",
         list:[
             {  
               src:'https://m.smzdm.com/p/7010188/?from=index',
@@ -103,7 +106,7 @@
 			}
 		},
 		components:{
-            zdmHeader, Swipe, SwipeItem
+            zdmHeader, Swipe, SwipeItem, Upload
 		},
 		mounted(){
 			var that = this;
@@ -198,6 +201,8 @@
             padding: 5px;
           }
         }
+      }
+      .upload{
       }
     }
     .logo{

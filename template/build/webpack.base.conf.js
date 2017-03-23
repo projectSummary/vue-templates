@@ -26,7 +26,9 @@ module.exports = {
       'components': path.resolve(__dirname, '../src/components'),
       //$ 表示精准匹配
       'vue$':'vue/dist/vue.common.js',
-      'zdm_ui': path.resolve(__dirname, '../src/assets/style/zdm_ui')
+      'zdm_ui': path.resolve(__dirname, '../src/assets/style/zdm_ui'),
+      'ajax': path.resolve(__dirname, '../src/assets/utils/api/ajax'),
+      'mock_data': path.resolve(__dirname, '../src/assets//utils/api/mock')
     }
   },
   resolveLoader: {

@@ -69,7 +69,8 @@
 <script>
     import Vue from 'vue';
 	  import Lib from 'assets/Lib';
-    import axios from 'axios';
+    import ajax from 'ajax';
+    import Mock from 'mock_data';
     import { zdmHeader, Upload } from 'components';
     import { Swipe, SwipeItem, InfiniteScroll} from 'mint-ui';
     import 'mint-ui/lib/style.css';
@@ -78,31 +79,10 @@
 	export default{
 		data(){
 			return{
-        title:"什么值得买",
+        title:'',
+        imgurl:'',
 				loading: false,
-        imgurl: "//new.brand.smzdm.com/common/upload_pic_ajax/",
-        list:[
-            {  
-              src:'https://m.smzdm.com/p/7010188/?from=index',
-              imglink:'https://tp-y.zdmimg.com/201703/12/58c564dd7a1464767.png_d320.jpg',
-              time:"03-12 23:20",
-              business: "京东",
-              content:'千元赠品来袭：京东 家电各品类大促',
-              price:"满5000送飞利浦粉钻，各档优惠券",
-              comment:"431"
-
-            },
-            {
-              src:'https://m.smzdm.com/p/7010188/?from=index',
-              imglink:'https://tp-y.zdmimg.com/201703/12/58c564dd7a1464767.png_d320.jpg',
-              time:"03-12 23:20",
-              business: "京东",
-              content:'千元赠品来袭：京东 家电各品类大促',
-              price:"满5000送飞利浦粉钻，各档优惠券",
-              comment:"431"
-            }
-        ]
-                
+        list:[]
 			}
 		},
 		components:{
@@ -115,14 +95,11 @@
 		methods:{
   			getData(){
   				var that = this;
-  				axios.get('http://api.smzdm.com/ev1/finder_detail/',{
-                      params: {
-                          fid: 11
-                      }
-  				}).then((response) => {
-  					var $data = response.data.data;
-  					console.log('data:', $data);
-  					that.tobj = $data
+  				ajax.getData('http://api.smzdm.com/ev1/finder_detail/',$data => {
+               console.log('data:', $data);
+    					 that.title = $data.title;
+               that.imgurl = $data.imgurl;
+               that.list = $data.list;
   				});
   			},
         loadMore(){
